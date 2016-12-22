@@ -1,7 +1,8 @@
 let python_highlight_all=1
 set nocompatible              " be iMproved, required
 filetype off                  " required
-set rnu
+set nu
+autocmd VimEnter * RltvNmbr
 set background=dark
 syntax on
 
@@ -27,6 +28,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-scripts/RltvNmbr.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
