@@ -63,3 +63,6 @@ set encoding=utf-8
 
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
