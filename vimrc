@@ -1,11 +1,16 @@
 let python_highlight_all=1
 set nocompatible              " be iMproved, required
 filetype off                  " required
+filetype plugin indent on
+set shiftwidth=4
+set tabstop=4
+set expandtab
+autocmd BufRead,BufNewFile *.js,*.htm,*.html setlocal tabstop=2 shiftwidth=2 softtabstop=2 "2 space tabs for HTML and Javascript"
 set nu
-autocmd VimEnter * RltvNmbr
 set background=dark
 syntax on
 
+" Vundle Settings
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -19,18 +24,22 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 
+" General Plugins
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
+"Layout and appearancePlugins
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'morhetz/gruvbox.git'
 Plugin 'vim-airline/vim-airline'
+"Development Plugins
+Plugin 'vim-scripts/c.vim'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'nvie/vim-flake8'
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'vim-scripts/RltvNmbr.vim'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'tpope/vim-surround'
+Plugin 'mattn/emmet-vim'
 
-" All of your Plugins must be added before the following line
+"All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -45,26 +54,37 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" change the mapleader from \ to ,
+let mapleader=","
+
+
+"split navigations, allows faster navigation of splits
 set splitbelow
 set splitright
 
-"split navigations
-"nnoremap <C-J> <C-W><C-J>
-"nnoremap <C-K> <C-W><C-K>
-"nnoremap <C-L> <C-W><C-L>
-"nnoremap <C-H> <C-W><C-H>
+noremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
-" Enable folding
-" set foldmethod=indent
-" set foldlevel=99
+"Remaps undo key to Shift-U. 
+nnoremap <S-U> u
+nnoremap u :echo "use shift--U instead"<enter>
 
-" Enable folding with the spacebar
-" nnoremap <space> za
+"buffer mapping
+nnoremap <S-W> :w<enter>:echo "Saved"<enter>
+nnoremap <S-Q> :q<enter>
+nmap <S-R> :w<enter>:so%<enter>:echo ".vimrc Reloaded"<enter>
 
-set encoding=utf-8
+"Autopairs
+inoremap <leader>" ""<left>
+"Emmett Leaderkey
+let g:user_emmet_leader_key=','
 
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
+" Auto commands
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
+
+"Theme Options
+" Colorscheme
+autocmd VimEnter * colo gruvbox 
