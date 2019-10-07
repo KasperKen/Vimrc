@@ -58,7 +58,7 @@ filetype plugin indent on    " required
 let mapleader=","
 
 
-"split navigations, allows faster navigation of splits
+"splits and navigations. Faster navigations and file browsing.
 set splitbelow
 set splitright
 
@@ -66,6 +66,9 @@ noremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+nnoremap <C-n> :NERDTreeToggle<enter>
+nnoremap <S-t>t :tabnew 
 
 "Remaps undo key to Shift-U. 
 nnoremap <S-U> u
@@ -76,14 +79,14 @@ nnoremap <S-W> :w<enter>:echo "Saved"<enter>
 nnoremap <S-Q> :q<enter>
 nmap <S-R> :w<enter>:so%<enter>:echo ".vimrc Reloaded"<enter>
 
+"Nerd Tree keymapping
+
+
 "Autopairs
 inoremap <leader>" ""<left>
+
 "Emmett Leaderkey
 let g:user_emmet_leader_key=','
-
-" Auto commands
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
 
 "Theme Options
 " Colorscheme
