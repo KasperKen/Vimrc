@@ -32,6 +32,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'morhetz/gruvbox.git'
 Plugin 'vim-airline/vim-airline'
+Plugin 'Yggdroot/indentLine'
 "Development Plugins
 Plugin 'vim-scripts/c.vim'
 Plugin 'vim-syntastic/syntastic'
