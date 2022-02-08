@@ -73,6 +73,8 @@ nnoremap <leader>k <C-W><C-K>
 nnoremap <leader>l <C-W><C-L>
 nnoremap <leader>h <C-W><C-H>
 
+
+"Nerd Tree keymapping
 nnoremap <leader>nt :NERDTreeToggle<enter>
 nnoremap <S-t>t :tabnew 
 
@@ -84,9 +86,6 @@ nnoremap u :echo "use shift--U instead"<enter>
 nnoremap <leader>w :w<enter>:echo "Saved"<enter>
 nnoremap <leader>q :q<enter>
 nmap <S-R> :w<enter>:so%<enter>:echo ".vimrc Reloaded"<enter>
-
-"Nerd Tree keymapping
-
 
 "Autopairs
 inoremap <leader>" ""<left>
