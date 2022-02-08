@@ -12,7 +12,7 @@ syntax on
 
 " Vundle Settings
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -33,12 +33,17 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'morhetz/gruvbox.git'
 Plugin 'vim-airline/vim-airline'
 Plugin 'Yggdroot/indentLine'
+"Syntax Highlighting
+Plugin 'maxmellon/vim-jsx-pretty'
+Plugin 'yuezk/vim-js'
+
 "Development Plugins
-Plugin 'vim-scripts/c.vim'
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'w0rp/ale'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-surround'
-Plugin 'mattn/emmet-vim'
+
 
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -63,12 +68,12 @@ let mapleader=","
 set splitbelow
 set splitright
 
-noremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <leader>j <C-W><C-J>
+nnoremap <leader>k <C-W><C-K>
+nnoremap <leader>l <C-W><C-L>
+nnoremap <leader>h <C-W><C-H>
 
-nnoremap <C-n> :NERDTreeToggle<enter>
+nnoremap <leader>nt :NERDTreeToggle<enter>
 nnoremap <S-t>t :tabnew 
 
 "Remaps undo key to Shift-U. 
@@ -76,8 +81,8 @@ nnoremap <S-U> u
 nnoremap u :echo "use shift--U instead"<enter>
 
 "buffer mapping
-nnoremap <S-W> :w<enter>:echo "Saved"<enter>
-nnoremap <S-Q> :q<enter>
+nnoremap <leader>w :w<enter>:echo "Saved"<enter>
+nnoremap <leader>q :q<enter>
 nmap <S-R> :w<enter>:so%<enter>:echo ".vimrc Reloaded"<enter>
 
 "Nerd Tree keymapping
@@ -88,6 +93,11 @@ inoremap <leader>" ""<left>
 
 "Emmett Leaderkey
 let g:user_emmet_leader_key=','
+
+"Linter Config
+let g:ale_linters = {
+  \   'javascript': ['eslint'],
+  \}
 
 "Theme Options
 " Colorscheme
