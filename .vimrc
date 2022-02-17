@@ -43,6 +43,7 @@ Plugin 'w0rp/ale'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-surround'
+Plugin 'tc50cal/vim-terminal'
 
 
 "All of your Plugins must be added before the following line
@@ -72,7 +73,6 @@ nnoremap <leader>j <C-W><C-J>
 nnoremap <leader>k <C-W><C-K>
 nnoremap <leader>l <C-W><C-L>
 nnoremap <leader>h <C-W><C-H>
-
 
 "Nerd Tree keymapping
 nnoremap <leader>nt :NERDTreeToggle<enter>
